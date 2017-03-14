@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>URL跳转</title>
+</head>
+<body>
+{% if webname_url_list %}
+    <ul>
+    {% for webname in webname_url_list %}
+        <li>
+        <a href="{{ webname.weburl }}/">{{ webname.webname }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>没有找到对应项目</p>>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>展示电话和姓名</title>
+</head>
+<body>
+{% if phone_name_list %}
+    <ul>
+    {% for name in phone_name_list %}
+        <li>
+        <a href="/enter/{{ name.id }}/">{{ name.name }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>没有找到对应项目</p>>
+{% endif %}
+</body>
+</html>
