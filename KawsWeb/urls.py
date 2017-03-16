@@ -15,9 +15,12 @@ Including another URLconf
 """
 from django.conf.urls import url,include
 from django.contrib import admin
-
+from KawsWebEnter import  views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', include('KawsWebEnter.urls')),
+    url(r'^enter/', include('KawsWebEnter.urls')),
+    url(r'^index3/$', views.index3, name='index3'),
+
+
 ]

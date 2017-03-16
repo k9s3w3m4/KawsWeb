@@ -6,10 +6,53 @@
 </head>
 <body>
 {%include 'enter/navigation.html' %}    <!--引用enter app下的通用导航栏-->
-<p>欢迎来到抗癌卫士测试平台测试版0.1版</p>
+<!--测试计划区-->
+<div style="background-color:Gainsboro">
+<h2 align="center">当前测试计划</h2>
+    {% if Testplanlist %}
+    <ul>
+    {% for targetversion in Testplanlist %}
+        <h3 align="center">
+            {{targetversion.targetversion}}
+        </h3>
+        <div style="width:100%;background-color:lavender;white-space:normal;left:30%">
+        <p>
+            {{targetversion.versionplan}}
+        </p>
+        </div>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>没有找到对应项目</p>
+{% endif %}
 <li>
     <a href="urljump/">点此处进入抗癌卫士测试常用网址</a>
 </li>
+</div>
+<!--各大功能介绍区-->
+<div>
+{% if Testplatformintroducelist %}
+{% for i in Testplatformintroducelist%}
+    <div style="background-color:GhostWhite">
+    <h4 align="center">{{i.platformname}}</h4>
+    <p align="center">{{i.platformintroduce}}</p>
+    <a href="{{i.Urllink}}" style="float:right">点此跳转</a>
+    <br>
+    </div>
+{% endfor %}
+{% else %}
+    <p>no resource</p>
+{% endif %}
+</div>
+
+<!--平台介绍区-->
+<div>
+    <h3 align="center">平台设计说明及使用教程</h3>
+    <p align="center">平台设计初衷是将碎块化的测试内容整合到一个平台中来，提高工作效率。技术选型用的是python Django以及html＋css实现。<br>
+       主要模块组成以用例管理，数据管理，自动化管理，app打包，真机管理，缺陷管理，报告管理，7个部分组成。不过这些部分可以拓展<br>
+        点击<a href="tutorial/">平台教程</a>来获取更多教程内容。教程中将包含平台使用说明和开发说明。
+    </p>
+</div>
 {%include 'enter/bottom.html' %}     <!-- 引用 enter app下的底部导航栏-->
 
 </body>

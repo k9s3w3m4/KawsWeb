@@ -5,16 +5,38 @@
 
 
 </head>
-<body>
+
 {%load staticfiles %}
-<table>
-    <tr>
-        <td><div id="navifirstline" style="postion:absolute">
-<img src="{%static 'icon.png'%}" alt="logo"/>
-</div> </td>
-        <td><p style="text-align:center">这个是个简单的导航栏测试</p></td>
-    </tr>
+<div class="texttest" style="position:relative;height:60px;background-color:#00FFCC">
+    <div style="position:absolute;top:0px">
+        <img src="{%static 'icon.png'%}" alt="logo" width="60" height="60"/>  </div>
+    <div style="position:absolute;top:0px;left:40%"><h1 >抗癌卫士测试平台</h1></div>
+</div>
+<hr>
+<table style="position:relative;left:15%" cellspacing="20">
+<tr>
+    <td>
+        <a href="/index3">用例管理平台</a>
+    </td>
+    <td>
+        <a href="/index3">数据平台</a>
+    </td>
+    <td>
+        <a href="/index3">自动化测试平台</a>
+    </td>
+    <td>
+        <a href="/index3">缺陷管理平台</a>
+    </td>
+    <td>
+        <a href="/index3">真机管理平台</a>
+    </td>
+    <td>
+        <a href="/index3">app打包平台</a>
+    </td>
+    <td>
+        <a href="/index3">报告集中管理平台</a>
+    </td>
+</tr>
 </table>
 </body>
 </html>
-

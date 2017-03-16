@@ -18,6 +18,18 @@ class BaseUrlForTest(models.Model):
     def __str__(self):
         return self.webname
 
+
+# 测试计划数据库模型
+class TestPlanVersion(models.Model):
+    id = models.IntegerField(primary_key=True)
+    targetversion = models.FloatField(max_length=20,blank=True,null=False)
+    versionplan = models.CharField(max_length=4000,blank=True,null=True)
+    creattime = models.DateField(auto_now_add=True,auto_now=False)
+    def __str__(self):
+         return self.targetversion
+
+
+# 测试员用户表（待拓展）
 class Testuser(models.Model):
     id = models.IntegerField(primary_key=True)
     phone = models.CharField(max_length=30, blank=True, null=True)
@@ -26,3 +38,12 @@ class Testuser(models.Model):
         return self.name
     class Meta:
         db_table = 'testuser'
+
+
+class TestPlatformIntroduce(models.Model):
+    id = models.IntegerField(primary_key=True)
+    platformname = models.CharField(max_length=50,blank=True,null=False)
+    platformintroduce = models.CharField(max_length=255,blank=True,null=True)
+    Urllink = models.CharField(max_length=50,blank=True,null=False)
+    def __str__(self):
+         return self.platformname
