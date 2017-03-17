@@ -39,7 +39,7 @@ class Testuser(models.Model):
     class Meta:
         db_table = 'testuser'
 
-
+#首页介绍测试平台内容存表，保证测试平台介绍和链接可以通过数据库实时改变
 class TestPlatformIntroduce(models.Model):
     id = models.IntegerField(primary_key=True)
     platformname = models.CharField(max_length=50,blank=True,null=False)
@@ -47,3 +47,11 @@ class TestPlatformIntroduce(models.Model):
     Urllink = models.CharField(max_length=50,blank=True,null=False)
     def __str__(self):
          return self.platformname
+
+# 用例版本展示列表
+class TestCaseVersionDisplay(models.Model):
+    id = models.IntegerField(primary_key=True)
+    versionname = models.CharField(max_length=30,blank=True,null=True)
+    versionintroduce = models.CharField(max_length=255,blank=True,null=True)
+    testlinkurl = models.CharField(max_length=255,blank=True,null=True)
+    author = models.CharField(max_length=20,blank=True,null=True)

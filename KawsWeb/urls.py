@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^enter/', include('KawsWebEnter.urls')),
     url(r'^index3/$', views.index3, name='index3'),
+    url(r'^testcaseplatform/$',views.TestCasePlatform,name='testcaseplatform')
 
 
 ]

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用例管理平台</title>
+</head>
+<body>
+{%include 'enter/navigation.html' %}
+<div style="position:relative;background-color:Azure">
+    <h2 align="center">简单说明</h2>
+    <p align="center">
+        测试用例管理平台testlink，开始使用请点击下方按钮，跳转到testlink。第一次使用请注册
+    </p>
+    <br>
+    <div style="position:absolute;bottom:0px;left:44%;background-color:aqua">
+        <a href="http://192.168.1.43/testlink1.9.15" >进入用例管理平台</a>
+    </div>
+</div>
+<div>
+    <h2 align="center">testlink使用说明</h2>
+    <div>
+{% if testcaseversiondisplaylist %}
+{% for i in testcaseversiondisplaylist%}
+    <div style="background-color:GhostWhite">
+    <h4 align="center">{{i.versionname}}</h4>
+    <p align="center">{{i.versionintroduce}}</p>
+    <a href="{{i.testlinkurl}}" style="float:right">点此跳转</a>
+    <br>
+    </div>
+{% endfor %}
+{% else %}
+    <p>no resource</p>
+{% endif %}
+    </div>
+</div>
+
+
+{%include 'enter/bottom.html' %}
+
+</body>
+</html>
