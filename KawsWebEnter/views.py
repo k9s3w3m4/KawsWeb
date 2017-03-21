@@ -49,4 +49,18 @@ def TestCasePlatform(request):
     context = RequestContext(request,{'testcaseversiondisplaylist':testcaseversiondisplaylist})
     return HttpResponse(template.render(context))
 
+def DataPlatform(request):
+    template = loader.get_template('enter/DataPlatform.html')
+    context = RequestContext(request)
+    return  HttpResponse(template.render(context))
 
+
+def AutoTestPlatform(request):
+    template = loader.get_template('enter/AutoTestPlatform.html')
+    context = RequestContext(request)
+    return HttpResponse(template.render(context))
+
+def BUGManagePlatform(request):
+    template = loader.get_template('enter/BUGManagePlatform.html')
+    context = RequestContext(request)
+    return  HttpResponse(template.render(context))
