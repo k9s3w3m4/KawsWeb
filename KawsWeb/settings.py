@@ -82,6 +82,14 @@ DATABASES = {
         'PASSWORD':'123',
         'HOST':'192.168.1.208',
         'PORT':'3306',
+    },
+    'stagedb':{
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'KawsStageCopy',
+        'USER': 'admin1',
+        'PASSWORD': '123',
+        'HOST': '192.168.1.208',
+        'PORT': '3306',
     }
 }
 

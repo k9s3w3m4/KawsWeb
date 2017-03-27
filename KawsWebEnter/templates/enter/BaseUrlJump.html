@@ -15,5 +15,20 @@
 {% else %}
     <p>没有找到对应项目</p>>
 {% endif %}
+
+{%if TbUser_list%}
+    <ul>
+    {% for i in TbUser_list %}
+        <li>
+        {{ i.username }}
+        </li>
+        <li>
+        {{ i.mobile }}
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>没有找到对应项目</p>>
+{% endif %}
 </body>
 </html>

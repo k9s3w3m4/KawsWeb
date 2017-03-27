@@ -5,6 +5,7 @@ from .models import BaseUrlForTest
 from .models import TestPlanVersion
 from .models import TestPlatformIntroduce
 from .models import TestCaseVersionDisplay
+from .models import TbUser
 from django.template import RequestContext,loader
 # 首页从数据库取值传值
 def index(request):
@@ -36,9 +37,11 @@ def testlinkjump(request):
 
 def UrlBaseJump(request):
     webname_url_list = BaseUrlForTest.objects.order_by('id')[:10]
+    TbUser_list = TbUser.objects.using('stagedb').filter(username = 'xcx')
     template=loader.get_template('enter/BaseUrlJump.html')
-    context = RequestContext(request,{'webname_url_list':webname_url_list})
+    context = RequestContext(request,{'webname_url_list':webname_url_list,'TbUser_list':TbUser_list})
     return HttpResponse(template.render(context))
+
 # 教程部分待拓展，现在只是简单放了个测试
 def tutorial(request):
     return HttpResponse(u"教程跳转测试")
