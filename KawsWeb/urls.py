@@ -24,6 +24,7 @@ urlpatterns = [
     url(r'^testcaseplatform/$',views.TestCasePlatform,name='testcaseplatform'),
     url(r'^dataplatform/$',views.DataPlatform,name='dataplatform'),
     url(r'^autotestplatform/$', views.AutoTestPlatform, name='autotestplatform'),
-    url(r'^bugmanageplatform/$', views.BUGManagePlatform, name='bugmanageplatform')
-
+    url(r'^bugmanageplatform/$', views.BUGManagePlatform, name='bugmanageplatform'),
+    url(r'^apppackageplatform',views.AppPackagePlatform,name='apppackageplaform'),
+    url(r'^reportmanageplatform',views.ReportManagePLatform,name='reportmanageplatform')
 ]

@@ -64,3 +64,15 @@ def BUGManagePlatform(request):
     template = loader.get_template('enter/BUGManagePlatform.html')
     context = RequestContext(request)
     return  HttpResponse(template.render(context))
+
+
+def AppPackagePlatform(request):
+    templte = loader.get_template('enter/AppPackagePlatform.html')
+    context = RequestContext(request)
+    return HttpResponse(templte.render(context))
+
+def ReportManagePLatform(request):
+    ReportWebList = BaseUrlForTest.objects.filter(webname__contains='报告')
+    template = loader.get_template('enter/ReportManagePlatform.html')
+    context = RequestContext(request,{'ReportWebList':ReportWebList})
+    return HttpResponse(template.render(context))

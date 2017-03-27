@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>报告管理平台</title>
+</head>
+<body>
+{%include 'enter/navigation.html' %}    <!--引用enter app下的通用导航栏-->
+<div>
+{% if ReportWebList %}
+{% for i in ReportWebList%}
+    <div style="background-color:GhostWhite">
+    <h4 align="center">{{i.webname}}</h4>
+    <a href="{{i.weburl}}" style="float:right">点此跳转</a>
+    <br>
+    </div>
+{% endfor %}
+{% else %}
+    <p>no resource</p>
+{% endif %}
+</div>
+{%include 'enter/bottom.html' %}     <!-- 引用 enter app下的底部导航栏-->
+
+</body>
+</html>
