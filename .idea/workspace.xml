@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d842c697-391c-4648-bd89-36fa6ec383ee" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KawsWeb/settings.py" afterPath="$PROJECT_DIR$/KawsWeb/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KawsWebEnter/models.py" afterPath="$PROJECT_DIR$/KawsWebEnter/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KawsWebEnter/templates/enter/BaseUrlJump.html" afterPath="$PROJECT_DIR$/KawsWebEnter/templates/enter/BaseUrlJump.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KawsWebEnter/views.py" afterPath="$PROJECT_DIR$/KawsWebEnter/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -577,7 +573,14 @@
       <option name="project" value="LOCAL" />
       <updated>1490591637642</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="20170327 commit2 start try use double database and double app contral one web">
+      <created>1490605746340</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1490605746340</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -633,7 +636,8 @@
     <MESSAGE value="20170317 commit main page complect" />
     <MESSAGE value="20170321 commit main page complect" />
     <MESSAGE value="20170327 commit basepartcomplet" />
-    <option name="LAST_COMMIT_MESSAGE" value="20170327 commit basepartcomplet" />
+    <MESSAGE value="20170327 commit2 start try use double database and double app contral one web" />
+    <option name="LAST_COMMIT_MESSAGE" value="20170327 commit2 start try use double database and double app contral one web" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
