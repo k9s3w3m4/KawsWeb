@@ -16,11 +16,13 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 from KawsWebEnter import  views
+from DataPlatformWeb import views as dataplatformview
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^enter/', include('KawsWebEnter.urls')),
     url(r'^index3/$', views.index3, name='index3'),
+    url(r'^dataplatformchange/',include('DataPlatformWeb.urls')),
     url(r'^testcaseplatform/$',views.TestCasePlatform,name='testcaseplatform'),
     url(r'^dataplatform/$',views.DataPlatform,name='dataplatform'),
     url(r'^autotestplatform/$', views.AutoTestPlatform, name='autotestplatform'),
