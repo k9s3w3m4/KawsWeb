@@ -22,7 +22,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^enter/', include('KawsWebEnter.urls')),
     url(r'^index3/$', views.index3, name='index3'),
-    url(r'^dataplatformchange/',include('DataPlatformWeb.urls')),
+    url(r'^dataplatformchange/',include('DataPlatformWeb.urls',namespace='datachange')),
     url(r'^testcaseplatform/$',views.TestCasePlatform,name='testcaseplatform'),
     url(r'^dataplatform/$',views.DataPlatform,name='dataplatform'),
     url(r'^autotestplatform/$', views.AutoTestPlatform, name='autotestplatform'),

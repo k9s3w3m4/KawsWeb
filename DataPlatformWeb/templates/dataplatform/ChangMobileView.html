@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>数据平台－修改账号</title>
+    <title>数据平台－修改账户</title>
 </head>
 <body>
 <div>
@@ -23,15 +23,25 @@
 </ul>
 </div>
 <div style="float:left;width:70%;background-color:white;">
-    <h2>请输入您要修改的用户</h2>
-<form action="{% url 'datachange:changemobileview' %}" method="get">
-    <input type="text" name = 'username' value="请输入账号用户名"> <br>
-    <input type="submit">
-</form>
+    {%if Tbuser_view_list%}
+    <h2>请将电话修改成你想要的新数字</h2>
+      {% for i in Tbuser_view_list %}
+ <form action="{%url 'datachange:changecompelet'%}" method="post">
+     {%csrf_token%}
+     用户名：<input name="userkey" value="{{i.userkey}}" type="hidden">{{i.username}}<br>
+     原注册电话：<input type="text" name="mobile_valuse" value="{{i.mobile}}"><br>
+     <input type="submit">
+     <br>
+ </form>
+
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>没有找到对应项目</p>
+{% endif %}
 </div>
 
-<div>
+
 {%include 'enter/bottom.html' %}     <!-- 引用 enter app下的底部导航栏-->
-</div>
 </body>
 </html>

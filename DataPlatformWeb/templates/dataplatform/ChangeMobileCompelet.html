@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>数据平台－修改账号</title>
+    <title>数据平台－修改完成</title>
 </head>
 <body>
 <div>
@@ -23,15 +23,10 @@
 </ul>
 </div>
 <div style="float:left;width:70%;background-color:white;">
-    <h2>请输入您要修改的用户</h2>
-<form action="{% url 'datachange:changemobileview' %}" method="get">
-    <input type="text" name = 'username' value="请输入账号用户名"> <br>
-    <input type="submit">
-</form>
+<h2>修改完成</h2>
 </div>
 
-<div>
+
 {%include 'enter/bottom.html' %}     <!-- 引用 enter app下的底部导航栏-->
-</div>
 </body>
 </html>

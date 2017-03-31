@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>数据平台－修改账号</title>
+    <title>数据平台－修改贡献值</title>
 </head>
 <body>
 <div>
@@ -18,16 +18,28 @@
 </ul>
 <h3>数据库数据修改</h3>
 <ul type="circle">
-    <li> 快速删除账号</li>
-    <li><a href="http://mall-cms.kaws.rocks/">修改账户贡献值</a> </li>
+    <li> <a href="/dataplatformchange/changemobile">快速删除账号</a></li>
+    <li> 修改账户贡献值 </li>
 </ul>
 </div>
 <div style="float:left;width:70%;background-color:white;">
-    <h2>请输入您要修改的用户</h2>
-<form action="{% url 'datachange:changemobileview' %}" method="get">
-    <input type="text" name = 'username' value="请输入账号用户名"> <br>
-    <input type="submit">
-</form>
+    {%if tbusercontribute_list%}
+    <h2>请输入您想要修改多少贡献值</h2>
+       {%for i in tbusercontribute_list %}
+ <form action="{%url 'datachange:changecompelet'%}" method="post">
+     {%csrf_token%}
+     用户名：<input name="userkey" value="{{i.userkey}}" type="hidden">{{i.username}}<br>
+     贡献值：<input type="text" name="mobile_valuse" value="{{i.contributioinvalue}}"><br>
+     <input type="submit">
+
+     <br>
+ </form>
+
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>没有找到对应项目</p>
+{% endif %}
 </div>
 
 <div>

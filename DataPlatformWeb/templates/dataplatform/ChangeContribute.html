@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>数据平台－修改账号</title>
+    <title>数据平台－修改贡献值</title>
 </head>
 <body>
 <div>
@@ -18,13 +18,13 @@
 </ul>
 <h3>数据库数据修改</h3>
 <ul type="circle">
-    <li> 快速删除账号</li>
-    <li><a href="http://mall-cms.kaws.rocks/">修改账户贡献值</a> </li>
+    <li> <a href="/dataplatformchange/changemobile">快速删除账号</a></li>
+    <li> 修改账户贡献值 </li>
 </ul>
 </div>
 <div style="float:left;width:70%;background-color:white;">
-    <h2>请输入您要修改的用户</h2>
-<form action="{% url 'datachange:changemobileview' %}" method="get">
+    <h2>请输入您要修改贡献值的用户</h2>
+<form action="{% url 'datachange:changecontributeview' %}" method="get">
     <input type="text" name = 'username' value="请输入账号用户名"> <br>
     <input type="submit">
 </form>

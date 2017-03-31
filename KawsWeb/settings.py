@@ -91,6 +91,15 @@ DATABASES = {
         'PASSWORD': '123',
         'HOST': '192.168.1.208',
         'PORT': '3306',
+    },
+    'kawsstagedb':{
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'kaws_stage_db',
+        'USER': 'kaws_tester',
+        'PASSWORD' : 'ujdc9YU7',
+        'HOST': 'ceres.kaws.rocks',
+        'PORT': '3311',
+
     }
 }
 
