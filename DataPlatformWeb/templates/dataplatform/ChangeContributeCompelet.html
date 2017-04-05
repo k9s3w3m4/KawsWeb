@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>数据平台－修改贡献值</title>
+    <title>数据平台－修改贡献值完成</title>
 </head>
 <body>
 <div>
@@ -23,21 +23,12 @@
 </ul>
 </div>
 <div style="float:left;width:70%;background-color:white;">
-    {%if tbusercontribute_list%}
-    <h2>请输入您想要修改多少贡献值</h2>
-       {%for i in tbusercontribute_list %}
- <form action="{%url 'datachange:changecontributecompelet'%}" method="post">
-     {%csrf_token%}
-     用户名：<input name="userkey" value="{{i.userkey}}" type="hidden">{{i.username}}<br>
-     贡献值：<input type="text" name="contribute_values" value="{{i.contributioinvalue}}"><br>
-     <input type="submit">
-
+    {%if contribute_list%}
+    <h2>您当前的贡献值为</h2>
+        <p>当前贡献值为{{contribute_list.contributioinvalue}}</p>
      <br>
- </form>
 
-    {% endfor %}
-    </ul>
-{% else %}
+    {% else %}
     <p>没有找到对应项目</p>
 {% endif %}
 </div>

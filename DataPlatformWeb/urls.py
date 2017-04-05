@@ -6,5 +6,5 @@ urlpatterns = [
    url(r'^changecompelet/$',views.ChangeMobileCompelet,name='changecompelet'),
    url(r'^changecontribute/$', views.ChangeContribute, name='changecontribute'),
    url(r'^changecontributeview/$', views.ChangeContributeview, name='changecontributeview'),
-   url(r'^changecontributecompelet/$', views.ChangeMobileCompelet, name='changecontributecompelet')
+   url(r'^changecontributecompelet/$', views.ChangeContibuteComplete, name='changecontributecompelet')
 ]
