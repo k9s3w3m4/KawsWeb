@@ -6,6 +6,8 @@ from .models import TestPlanVersion
 from .models import TestPlatformIntroduce
 from .models import TestCaseVersionDisplay
 from .models import TbUser
+from .models import *
+from .models import MoblieStatus
 from django.template import RequestContext,loader
 # 首页从数据库取值传值
 def index(request):
@@ -57,25 +59,61 @@ def DataPlatform(request):
     context = RequestContext(request)
     return  HttpResponse(template.render(context))
 
-
+# 自动化测试页
 def AutoTestPlatform(request):
     template = loader.get_template('enter/AutoTestPlatform.html')
     context = RequestContext(request)
     return HttpResponse(template.render(context))
 
+
+# BUG管理页
 def BUGManagePlatform(request):
     template = loader.get_template('enter/BUGManagePlatform.html')
     context = RequestContext(request)
     return  HttpResponse(template.render(context))
 
 
+# app打包页
 def AppPackagePlatform(request):
     templte = loader.get_template('enter/AppPackagePlatform.html')
     context = RequestContext(request)
     return HttpResponse(templte.render(context))
 
+
+# 报告管理页
 def ReportManagePLatform(request):
     ReportWebList = BaseUrlForTest.objects.filter(webname__contains='报告')
     template = loader.get_template('enter/ReportManagePlatform.html')
     context = RequestContext(request,{'ReportWebList':ReportWebList})
     return HttpResponse(template.render(context))
+
+
+#  真机使用状态页
+def ShowMoblieStatus(request):
+    MobileStatusList = MoblieStatus.objects.order_by('id')
+    context = {'mobilestatuslist':MobileStatusList}
+    return render(request,'enter/MobleStatusManagePlatform.html',context)
+
+
+# 申请使用手机
+def UseMobile(request):
+    getmobileid = request.GET['mobileid']
+    mobile_list = MoblieStatus.objects.get(id = getmobileid)
+    user_list = Testuser.objects.order_by('id')
+    context= {'mobilelist':mobile_list,'userlist':user_list}
+    return  render(request,'enter/UseMobile.html',context)
+
+# 申请使用完成
+def UseMobileComplete(request):
+    getmobileid = request.POST['mobileid']
+    getreturntime = request.POST['returntime']
+    getmobilestatus = request.POST['mobilestatus']
+    getuserid = request.POST['user']
+    mobilelist = MoblieStatus.objects.get(id = getmobileid)
+    userlist = Testuser.objects.get(id =getuserid)
+    mobilelist.user.clear()
+    mobilelist.user.add(userlist)
+    mobilelist.mobilestatus=getmobilestatus
+    mobilelist.returntime = getreturntime
+    mobilelist.save()
+    return render(request,'enter/UseMobileComplete.html')

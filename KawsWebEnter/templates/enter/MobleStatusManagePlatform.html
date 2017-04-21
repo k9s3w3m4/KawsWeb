@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>真机管理平台</title>
+</head>
+<body>
+{%include 'enter/navigation.html' %}    <!--引用enter app下的通用导航栏-->
+<h1 align="center">手机使用状态</h1>
+{% if mobilestatuslist %}
+    <table cellpadding="20">
+     <tr>
+         <td>编号</td>
+         <td>机器名称</td>
+         <td>使用状态</td>
+         <td>借出时间</td>
+         <td>预计归还时间</td>
+         <td>使用者</td>
+         <td>   </td>
+     </tr>
+    {% for i in mobilestatuslist %}
+     <tr>
+         <td>{{i.id}}</td>
+         <td>{{i.mobliename}}</td>
+         {% if i.mobilestatus == 1 %}
+         <td>闲置中</td>
+         {% elif i.mobilestatus == 2 %}
+         <td>手工测试中</td>
+         {% elif i.mobilestatus == 3 %}
+         <td>自动测试中</td>
+         {% else %}
+         <td>其它部门使用中</td>>
+         {% endif %}
+         <td>{{i.lendtime}}</td>
+         <td>{{i.returntime}}</td>
+         {% for user in i.user.all%}
+         <td>{{user.name}}</td>
+         {% endfor %}
+         <td>
+            <form action="{% url 'usemobile' %}" method="get">
+             <input type="hidden" value="{{i.id}}" name="mobileid">
+             <input type="submit" value="申请使用手机">
+            </form>
+         </td>
+     </tr>
+    {% endfor %}
+
+    </table>
+{% else %}
+    <p>没有找到对应项目</p>
+{% endif %}
+
+{%include 'enter/bottom.html' %}     <!-- 引用 enter app下的底部导航栏-->
+
+</body>
+</html>

@@ -25,7 +25,7 @@ class TestPlanVersion(models.Model):
     targetversion = models.FloatField(max_length=20,blank=True,null=False)
     versionplan = models.CharField(max_length=4000,blank=True,null=True)
     creattime = models.DateField(auto_now_add=True,auto_now=False)
-    def __str__(self):
+    def __float__(self):
          return self.targetversion
 
 
@@ -116,3 +116,13 @@ class TbUser(models.Model):
 
     class Meta:
         db_table = 'tb_user'
+#    真机使用状态表
+class MoblieStatus(models.Model):
+    id = models.IntegerField(primary_key=True,auto_created=True)
+    mobliename = models.CharField(max_length=255)
+    mobilestatus = models.IntegerField(default=1)
+    user = models.ManyToManyField(Testuser)
+    lendtime = models.DateField(auto_created=True,auto_now_add=True)
+    returntime = models.DateField(auto_created=True,auto_now_add=True)
+    def __str__(self):
+        return self.mobliename

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>申请使用手机</title>
+</head>
+<body>
+{%include 'enter/navigation.html' %}    <!--引用enter app下的通用导航栏-->
+<h1 align="center">申请使用手机</h1>
+<div align="center">
+{% if mobilelist %}
+<form action="{%url 'usemobilecomplete' %}" method="post">
+{%csrf_token%}
+手机名称：<label>{{mobilelist.mobliename}}</label><input type="hidden" name="mobileid" value="{{mobilelist.id}}">     <br>
+预计归还时间：<input type="datetime-local" name="returntime" value="2016-01-20">     <br>
+使用用途：<select name="mobilestatus">
+    <option value="1">闲置中</option>
+    <option value="2">手工测试</option>
+    <option value="3">自动测试</option>
+    <option value="4">其它部门使用</option>
+</select><br>
+使用人：<select name="user">
+        {%for user in userlist %}
+        <option value="{{user.id}}">{{user.name}}</option>
+        {%endfor%}
+</select>    <br>
+    <input type="submit" value="申请使用">
+</form>
+{% else %}
+    <p>没有找到手机项</p>
+{% endif %}
+
+
+</div>
+{%include 'enter/bottom.html' %}     <!-- 引用 enter app下的底部导航栏-->
+
+</body>
+</html>

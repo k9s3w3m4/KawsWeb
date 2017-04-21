@@ -2,11 +2,14 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>基础页</title>
+    <title>申请完成</title>
 </head>
 <body>
 {%include 'enter/navigation.html' %}    <!--引用enter app下的通用导航栏-->
-
+<div align="center">
+<h1 align="center">申请完成</h1>
+<a href="{% url 'mobilesstatus'%}">返回列表页</a>
+</div>
 {%include 'enter/bottom.html' %}     <!-- 引用 enter app下的底部导航栏-->
 </body>
 </html>

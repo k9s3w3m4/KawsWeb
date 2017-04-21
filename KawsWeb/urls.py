@@ -27,6 +27,9 @@ urlpatterns = [
     url(r'^dataplatform/$',views.DataPlatform,name='dataplatform'),
     url(r'^autotestplatform/$', views.AutoTestPlatform, name='autotestplatform'),
     url(r'^bugmanageplatform/$', views.BUGManagePlatform, name='bugmanageplatform'),
-    url(r'^apppackageplatform',views.AppPackagePlatform,name='apppackageplaform'),
-    url(r'^reportmanageplatform',views.ReportManagePLatform,name='reportmanageplatform')
+    url(r'^apppackageplatform/$',views.AppPackagePlatform,name='apppackageplaform'),
+    url(r'^reportmanageplatform/$',views.ReportManagePLatform,name='reportmanageplatform'),
+    url(r'^mobilestatus/$',views.ShowMoblieStatus,name='mobilesstatus'),
+    url(r'^usemobile/$',views.UseMobile,name='usemobile'),
+    url(r'^usemobilecomlete',views.UseMobileComplete,name='usemobilecomplete')
 ]
