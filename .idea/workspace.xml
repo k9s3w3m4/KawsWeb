@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d842c697-391c-4648-bd89-36fa6ec383ee" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/KawsWebEnter/migrations/0006_mobliestatus_tbuser.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/KawsWebEnter/migrations/0007_remove_mobliestatus_mobilestatus.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/KawsWebEnter/migrations/0008_mobliestatus_mobilestatus.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KawsWebEnter/admin.py" afterPath="$PROJECT_DIR$/KawsWebEnter/admin.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KawsWebEnter/models.py" afterPath="$PROJECT_DIR$/KawsWebEnter/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KawsWebEnter/templates/enter/MobleStatusManagePlatform.html" afterPath="$PROJECT_DIR$/KawsWebEnter/templates/enter/MobleStatusManagePlatform.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KawsWebEnter/templates/enter/UseMobile.html" afterPath="$PROJECT_DIR$/KawsWebEnter/templates/enter/UseMobile.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/KawsWebEnter/views.py" afterPath="$PROJECT_DIR$/KawsWebEnter/views.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -704,7 +696,14 @@
       <option name="project" value="LOCAL" />
       <updated>1492764680671</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="20170502 更新真机功能以显示版本">
+      <created>1494322217654</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1494322217654</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -801,7 +800,8 @@
     <MESSAGE value="20170327 commit2 start try use double database and double app contral one web" />
     <MESSAGE value="20170331  基本完工" />
     <MESSAGE value="20170331  除去1.0不开发内容。程序完工" />
-    <option name="LAST_COMMIT_MESSAGE" value="20170331  除去1.0不开发内容。程序完工" />
+    <MESSAGE value="20170502 更新真机功能以显示版本" />
+    <option name="LAST_COMMIT_MESSAGE" value="20170502 更新真机功能以显示版本" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
