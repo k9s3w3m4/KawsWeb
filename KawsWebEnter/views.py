@@ -108,6 +108,7 @@ def UseMobileComplete(request):
     getmobileid = request.POST['mobileid']
     getreturntime = request.POST['returntime']
     getmobilestatus = request.POST['mobilestatus']
+    getsystemversion = request.POST['systemversion']
     getuserid = request.POST['user']
     mobilelist = MoblieStatus.objects.get(id = getmobileid)
     userlist = Testuser.objects.get(id =getuserid)
@@ -115,5 +116,6 @@ def UseMobileComplete(request):
     mobilelist.user.add(userlist)
     mobilelist.mobilestatus=getmobilestatus
     mobilelist.returntime = getreturntime
+    mobilelist.systemversion = getsystemversion
     mobilelist.save()
     return render(request,'enter/UseMobileComplete.html')

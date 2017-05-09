@@ -118,11 +118,11 @@ class TbUser(models.Model):
         db_table = 'tb_user'
 #    真机使用状态表
 class MoblieStatus(models.Model):
-    id = models.IntegerField(primary_key=True,auto_created=True)
     mobliename = models.CharField(max_length=255)
     mobilestatus = models.IntegerField(default=1)
     user = models.ManyToManyField(Testuser)
     lendtime = models.DateField(auto_created=True,auto_now_add=True)
     returntime = models.DateField(auto_created=True,auto_now_add=True)
+    systemversion = models.CharField(max_length=255,null=False)
     def __str__(self):
         return self.mobliename

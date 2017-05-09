@@ -8,13 +8,14 @@
 {%include 'enter/navigation.html' %}    <!--引用enter app下的通用导航栏-->
 <h1 align="center">手机使用状态</h1>
 {% if mobilestatuslist %}
-    <table cellpadding="20">
+    <table cellpadding="15" align="center">
      <tr>
          <td>编号</td>
          <td>机器名称</td>
          <td>使用状态</td>
          <td>借出时间</td>
          <td>预计归还时间</td>
+         <td>系统版本</td>
          <td>使用者</td>
          <td>   </td>
      </tr>
@@ -33,6 +34,7 @@
          {% endif %}
          <td>{{i.lendtime}}</td>
          <td>{{i.returntime}}</td>
+         <td>{{i.systemversion}}</td>
          {% for user in i.user.all%}
          <td>{{user.name}}</td>
          {% endfor %}

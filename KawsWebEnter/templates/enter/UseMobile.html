@@ -19,6 +19,7 @@
     <option value="3">自动测试</option>
     <option value="4">其它部门使用</option>
 </select><br>
+系统版本：<input type="text" name="systemversion" value="{{mobilelist.systemversion}}"><br>
 使用人：<select name="user">
         {%for user in userlist %}
         <option value="{{user.id}}">{{user.name}}</option>
