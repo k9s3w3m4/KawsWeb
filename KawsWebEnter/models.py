@@ -126,3 +126,11 @@ class MoblieStatus(models.Model):
     systemversion = models.CharField(max_length=255,null=False)
     def __str__(self):
         return self.mobliename
+#     app包信息表
+class APPPakageManagement(models.Model):
+    appname = models.CharField(max_length=255)
+    version = models.CharField(max_length=255)
+    downloadurl = models.CharField(max_length=255)
+    def __str__(self):
+        return self.appname
+

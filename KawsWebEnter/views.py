@@ -119,3 +119,8 @@ def UseMobileComplete(request):
     mobilelist.systemversion = getsystemversion
     mobilelist.save()
     return render(request,'enter/UseMobileComplete.html')
+
+def APPPakage(request) :
+    app_list = APPPakageManagement.objects.order_by('id')
+    content = {'app_list':app_list}
+    return render(request,'enter/APPPakageManage.html',content)

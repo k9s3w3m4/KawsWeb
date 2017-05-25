@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>基础页</title>
+</head>
+<body>
+{%include 'enter/navigation.html' %}    <!--引用enter app下的通用导航栏-->
+
+<h1 align="center">历史包下载</h1>
+{% if app_list %}
+    <table cellpadding="15" align="center">
+     <tr>
+         <td>编号</td>
+         <td>app名称</td>
+         <td>版本</td>
+         <td>下载链接</td>
+
+     </tr>
+    {% for i in app_list %}
+     <tr>
+         <td>{{i.id}}</td>
+         <td>{{i.appname}}</td>
+         <td>{{i.version}}</td>
+         <td><a href="{{i.downloadurl}}">点击下载</a></td>
+     </tr>
+    {% endfor %}
+
+    </table>
+{% else %}
+    <p>没有找到对应项目</p>
+{% endif %}
+
+{%include 'enter/bottom.html' %}     <!-- 引用 enter app下的底部导航栏-->
+</body>
+</html>

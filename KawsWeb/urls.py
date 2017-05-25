@@ -31,5 +31,6 @@ urlpatterns = [
     url(r'^reportmanageplatform/$',views.ReportManagePLatform,name='reportmanageplatform'),
     url(r'^mobilestatus/$',views.ShowMoblieStatus,name='mobilesstatus'),
     url(r'^usemobile/$',views.UseMobile,name='usemobile'),
-    url(r'^usemobilecomlete',views.UseMobileComplete,name='usemobilecomplete')
+    url(r'^usemobilecomlete',views.UseMobileComplete,name='usemobilecomplete'),
+    url(r'^apppakagemanagement/$',views.APPPakage,name='apppakagemanament')
 ]
